@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sampini.PrimerParcial.Labo3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+
+</head>
+<body onload="cargarDatos()">
+<div id="FormDatos" class="container"></div>
+<h1>Form Datos</h1>
+<div class="input-group mb-3">
+    <label class="input-group-text" for="FiltroTipo">Filtrar Por</label>
+    <select class="form-select-sm" id="FiltroTipo">
+      <option value="1" selected>Todos</option>
+      <option value="2">Heroe</option>
+      <option value="3">Villano</option>
+    </select>
+</div>
+<div class="input-group mb-3">
+    <label class="input-group-text">Calcular Edad Promedio</label>
+    <input type="text" class="form-control-sm" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Calcular</button>
+</div>
+<label>Mostrar Columnas</label>
+<div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">ID</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Nombre</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Apellido</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Edad</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">AlterEgo</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Ciudad</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Publicado</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Enemigo</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">Robos</label>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">AlterEgo</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Publicado</th>
+        <th scope="col">Enemigo</th>
+        <th scope="col">Robos</th>
+        <th scope="col">Asesinatos</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+<button type="submit" class="btn btn-primary" onclick="HabilitarABM()">Agregar</button>
+<div id="FormABM" class="container-fluid">
+    <h1>Formulario ABM</h1>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="id">ID</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="id" disabled>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input type="text" class="form-control-sm" id="nombre" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" >Apellido</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="apellido">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Edad</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="edad">
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="tipo">Tipo</label>
+        <select class="form-select-sm" id="tipo">
+          <option value="1">Heroe</option>
+          <option value="2">Villano</option>
+        </select>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">AlterEgo</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="alterEgo">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Ciudad</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="ciudad">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Publicado</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="publicado">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Enemigo</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  id="enemigo">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Robos</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="robos">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Asesinatos</span>
+        <input type="text" class="form-control-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="asesinatos">
+    </div>
+    <button type="submit" class="btn btn-success" onclick="AltaPersona()">Alta</button>
+    <button type="submit" class="btn btn-warning">Modificar</button>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <button type="submit" class="btn btn-info"  onclick="DeshabilitarABM()">Cancelar</button>
+</div>    
+
+    <script src="js/script.js"></script>
+</body>
+</html>
